@@ -1,0 +1,13 @@
+<%- include('partials/header.html')%>
+<link rel="stylesheet" href="/public/single.css">
+  <section class="noticia">
+    <% if(post[0] != null){ %>
+    <img src="<%= post[0].img %>" alt="" />
+    <h1 class="title"><%= post[0].titulo %></h1>
+    <h2 class="author"><%= post[0].autor %></h2>
+    <p class="materia"><%= post[0].conteudo %></p>
+    <% } %>
+  </section>
+  <%- include('partials/footer.html') %>
+  </body>
+</html>

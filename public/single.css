@@ -1,0 +1,39 @@
+.noticia{
+    background-color: rgb(24, 24, 24);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 3%;
+}
+.noticia > img{
+    width: 100%;
+    border-radius: 20px;
+}
+.noticia > h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+.noticia > h2{
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+}
+.noticia > p {
+    padding-top: 30px;
+    text-align: justify;
+}
+@media screen and (min-width: 1024px){
+    .noticia> h1{
+        text-align: left;
+    }
+    .noticia> h2{
+        text-align: left;
+    }
+    .noticia> p{
+        text-align: left;
+        width: 60%;
+    }
+    .noticia > img{
+        width: 60%;
+    }
+}

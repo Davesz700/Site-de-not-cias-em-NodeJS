@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícias - CRUD</title>
+    <script
+      src="https://kit.fontawesome.com/2b13d5fb0b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/home.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="titulo">Notícias - CRUD</h1>
+      <p class="subtitulo">
+        Criei esse aplicativo para demonstrar minhas habilidades com a criação
+        de CRUDs.
+      </p>
+      <div class="menu" id="menu">
+        <a href="#" id="menu-button"><i class="fa-solid fa-bars"></i></a>
+        <div class="busca">
+          <form action="" method="get">
+            <input name="busca" type="text" placeholder="Busque.." />
+            <button type="submit" class="lupa">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <a href="/">Home</a>
+        <a href="#">Postar Notícia</a>
+      </div>
+    </header>
+    <script>
+      var button = document.getElementById("menu-button");
+      var menu = document.getElementById("menu");
+      button.addEventListener("click", () => {
+        console.log("clicou");
+        if (!menu.classList.contains("menu-ext")) {
+          menu.classList.add("menu-ext");
+        } else {
+          menu.classList.remove("menu-ext");
+        }
+      });
+    </script>
+  </body>
+</html>

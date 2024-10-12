@@ -1,0 +1,30 @@
+  <%- include('partials/header.html') %>
+    <div class="pc-view">
+      <section class="not-dest">
+        <div class="not-s">
+          <div class="slide">
+            <% for(let i = posts.length - 3; i< posts.length; i++){%>
+            <div class="div-not">
+              <img src="<%= posts[i].img %>" alt="">
+              <h1 class="nots-title"><%= posts[i].titulo %></h1>
+            </div>
+            <%}%>
+          </div>
+        </div>
+      </section>
+      <section class="ult-not">
+        <div><h1>Últimas notícias</h1></div>
+        <% for(let i = 0; i< 5; i++){%>
+        <div class="card">
+          <img src="<%= posts[i].img %>" alt="" />
+          <a href="/<%= posts[i].slug %>" target="_blank"><h3><%= posts[i].titulo %></h3></a>
+        </div>
+        <%}%>
+      </section>
+
+    </div>
+    <%- include('partials/footer.html') %>
+
+    <script src="/public/script.js"></script>
+  </body>
+</html>

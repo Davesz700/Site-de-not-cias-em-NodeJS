@@ -1,0 +1,18 @@
+<%- include('partials/header.html')%>
+<link rel="stylesheet" href="/public/busca.css" />
+<section class="resultados">
+    <% if(res.length != 0){ %>
+        <h1><%= res.length %> resultado(s) encontrado(s)</h1>
+        <% for(let i = 0; i< res.length; i++){ %>
+        <div class="r">
+            <img src="<%= res[i].img %>" alt="" />
+            <a href="/<%= res[i].slug %>"><h1><%= res[i].titulo %></h1></a>
+        </div>
+        <% } %>
+  <% }else{%>
+        <h1>nenhum resultado foi encontrado</h1>
+    <% } %>
+
+</section>
+
+<%- include('partials/footer.html') %>

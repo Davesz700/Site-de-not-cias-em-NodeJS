@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="Login">
+        <form action="" class="LoginForm" id="logform" method="post">
+          <h1 class="titleL">LOGIN</h1>
+          <input type="email" name="email" placeholder="email" class="formcamp" />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            class="formcamp"
+          />
+          <input type="submit" value="Entrar" class="button" />
+        </form>
+        <form action="registrar" class="LoginForm ocultar" id="regform" method="post">
+          <h1 class="titleL" style="font-size: 45px">REGISTRE-SE</h1>
+          <input type="text" id="name" name="nome" placeholder="nome" class="formcamp" />
+          <input type="email" id="email" name="email_r" placeholder="email" class="formcamp" />
+          <input
+            type="password"
+            name="senha_r"
+            id="password"
+            placeholder="senha"
+            class="formcamp"
+          />
+          <input
+            name="c_senha"
+            type="password"
+            id="c_password"
+            placeholder="confirme sua senha"
+            class="formcamp"
+          />
+          <input type="submit" value="Registrar" name="registrar" class="button"/>
+        </form>
+        <a href="" class="helps">esqueci minha senha</a>
+        <h1 href="" class="helps registrar">registrar-se</h1>
+      </div>
+      <h1 class="title">NOTÍCIAS CRUD</h1>
+    </div>
+    <%- include('partials/footer.html') %>
+    <script src="/public/login.js"></script>
+  </body>
+</html>
