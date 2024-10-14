@@ -1,1 +1,1 @@
-This is a project of a Web Journal made in NodeJS.
+This is a project of a Web Journal made in NodeJS. Still not ready, Im creating an ID to identify every user. Its using a local db too, with MongoDB and mongoose, you maybe cannot run it with the original db, but you can try to attach your own to the code.
