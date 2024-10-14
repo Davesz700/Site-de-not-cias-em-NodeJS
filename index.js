@@ -9,6 +9,7 @@ const Posts = require('./Posts.js')
 const Users = require('./Users.js')
 var session = require('express-session');
 const { ppid } = require("process");
+const { redirect } = require("express/lib/response.js");
 app.use(session({
   secret:"Apolo21",
   resave:false,
@@ -33,6 +34,33 @@ app.get("/login", (req,res)=>{
     console.log(`Olá ${req.session.user}, você está logado`)
   }
 })
+app.get("/postar_noticia", (req,res)=>{
+  if(req.session.user != null){
+    res.render("n_noticia.ejs",{user:req.session.user,user_pid:req.session.user_pid})
+  }else{
+    res.redirect("/login")
+  }
+
+  
+})
+app.post("/postar_noticia", (req,res)=>{
+  let titulo = req.body.titulo
+  let autor = req.body.autor
+  let noticia = req.body.noticia
+  let img = req.body.img
+  let categoria = req.body.categoria
+  let autor_pid = req.body.autor_pid
+  Posts.create({
+    categoria: categoria,
+    titulo: titulo,
+    autor: autor,
+    img: img,
+    conteudo: noticia,
+    slug: create_slug(titulo,autor_pid),
+    autor_pid:autor_pid
+  })
+  res.redirect("/")
+})
 app.post("/login", (req,res)=>{
   let email = req.body.email
   let password = req.body.password
@@ -43,7 +71,8 @@ app.post("/login", (req,res)=>{
       }else{
         if (password == user[0].senha){
           req.session.user = user[0].Nome
-          res.redirect("/login")
+          req.session.user_pid = user[0].pid
+          res.redirect("/")
         }
         else{
           res.send("senha incorreta!")
@@ -131,10 +160,19 @@ function generate_pid(){
   pid = pid+"#"+Math.floor(Math.random() * 10000)
  return pid
 }
+function create_slug(titulo,pid){
+  let slug = ""
+  for(i=0;i<titulo.length;i++){
+    if(titulo[i]!=" ")
+    slug = slug + titulo[i] + "-"
+  }
+  
+  return slug + Math.floor(Math.random() * 10000)
+}
 
 
 
-app.listen(5000, () => {
+app.listen(4040, () => {
     console.log("Server no ar.");
   });
   

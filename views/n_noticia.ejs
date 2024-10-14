@@ -1,0 +1,24 @@
+<%- include('partials/header.html') %> 
+<link rel="stylesheet" href="/public/n_post.css">
+<div class="box-form">
+    <form method="post" action="" class="form">
+        <label for="titulo">Dê um título a sua notícia:</label>
+        <input type="text" placeholder="título da notícia" id="titulo" name="titulo">
+        <label for="img">Adicine um link de uma imagem para sua notícia:</label>
+        <input type="url" placeholder="link da imagem da notícia" id="img" name="img">
+        <label for="categoria">Escolha uma categoria:</label>
+        <select name="categoria" id="categoria">
+            <option value="tecnologia">Tecnologia</option>
+            <option value="ciencia">Ciência</option>
+            <option value="arte">Arte</option>
+            <option value="educacao">Educação</option>
+        </select>
+        <label for="conteudo">Compartilhe sua matéria aqui:</label>
+        <textarea rows="5" cols="30" class="noticia" name="noticia"></textarea>
+        <input type="hidden" id="autor" name="autor" value="<%= user %>">
+        <input type="hidden" id="autor_pid" name="autor_pid" value="<%= user_pid %>">
+        <input type="submit" value="Postar!">
+
+    </form>
+</div>
+<%- include('partials/footer.html') %>

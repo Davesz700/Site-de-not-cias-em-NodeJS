@@ -8,6 +8,7 @@ var postSchema = new schema(
     img: String,
     conteudo: String,
     slug: String,
+    autor_pid:String
   },
   { collection: "noticias" }
 );

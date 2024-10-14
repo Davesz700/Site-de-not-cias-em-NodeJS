@@ -1,0 +1,67 @@
+.box-form{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: black;
+}
+label{
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+}
+.form{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 4%;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgb(24, 24, 24);
+    border-radius: 20px;
+    padding: 4%;
+}
+input[type = "text"]{
+    padding: 1%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgb(24, 24, 24);
+    border: none;
+    color: white;
+}
+input[type = "url"]{
+    padding: 1%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgb(24, 24, 24);
+    border: none;
+    color: white;
+}
+input[type = "submit"]{
+    cursor: pointer;
+    width: 30%;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+select{
+    padding: 1%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgb(24, 24, 24);
+    border: none;
+    color: white;
+}
+.noticia{
+    padding: 1%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgb(24, 24, 24);
+    border: none;
+    color: white;
+    height: 500px;
+    resize: none;
+}
